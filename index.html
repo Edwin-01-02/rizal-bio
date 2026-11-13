@@ -1,0 +1,452 @@
+<!--
+  BIOGRAPHY WEBSITE — DR. JOSE P. RIZAL
+  Para sa Google Sites: Insert > Embed > "Embed code" > i-paste ang BUONG code na ito.
+  Tip: i-resize ang embed box sa full width at pinakamataas na height (o gumamit ng Full page).
+  Hanapin ang "EDIT DITO" sa ibaba para ilagay ang sarili mong images, GIF, MP3, at MP4.
+-->
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jose Rizal — Biography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B33;        /* malalim na asul */
+  --ink-2:#17284A;
+  --sun:#E2A93B;        /* ginto ng araw */
+  --sun-soft:#F6DFA6;
+  --red:#B3263E;        /* pula ng watawat */
+  --paper:#EEF2F7;
+  --card:#FFFFFF;
+  --text:#1B2433;
+  --muted:#5B6678;
+  --radius:18px;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Figtree','Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--text);background:var(--paper);line-height:1.65;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(14,27,51,.92);backdrop-filter:blur(8px);
+  display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px 12px}
+nav a{color:#DDE5F2;text-decoration:none;font-weight:500;font-size:15px;padding:8px 16px;border-radius:999px;transition:background .3s,color .3s}
+nav a:hover,nav a.active{background:var(--sun);color:var(--ink)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:radial-gradient(1200px 600px at 70% 30%,var(--ink-2),var(--ink));color:#fff;overflow:hidden;
+  padding:90px 24px 120px;min-height:620px;display:grid;place-items:center}
+.sun{position:absolute;right:-140px;top:50%;width:620px;height:620px;margin-top:-310px;opacity:.9;
+  animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-inner{position:relative;z-index:2;max-width:1000px;width:100%;display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(46px,8vw,96px);line-height:.98;letter-spacing:-.02em}
+.hero h1 span{display:block;font-style:italic;font-weight:500;color:var(--sun);font-size:.5em;letter-spacing:0;margin-bottom:10px}
+.hero p.lead{margin-top:22px;max-width:520px;color:#CAD5E8;font-size:19px}
+.type{margin-top:26px;font-family:var(--display);font-style:italic;color:var(--sun-soft);font-size:20px;min-height:32px}
+.type::after{content:"";display:inline-block;width:2px;height:1em;background:var(--sun);margin-left:4px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:13px 26px;border-radius:999px;transition:transform .25s,box-shadow .25s,background .25s}
+.btn.primary{background:var(--sun);color:var(--ink)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(226,169,59,.4)}
+.btn.ghost{border:2px solid rgba(255,255,255,.4);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+.portrait{position:relative;aspect-ratio:4/5;border-radius:200px 200px 24px 24px;overflow:hidden;
+  border:4px solid var(--sun);box-shadow:0 30px 60px rgba(0,0,0,.45);background:var(--ink-2);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* placeholder para sa media na wala pang link */
+.ph{width:100%;height:100%;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  text-align:center;padding:16px;color:var(--muted);background:repeating-linear-gradient(45deg,#E4EAF3,#E4EAF3 12px,#EDF1F8 12px,#EDF1F8 24px);font-size:14px}
+.portrait .ph{color:#9FB0CC;background:repeating-linear-gradient(45deg,#17284A,#17284A 12px,#1B2F57 12px,#1B2F57 24px)}
+.ph b{font-family:var(--display);font-size:18px;color:inherit}
+
+/* ---------- SECTIONS ---------- */
+section{padding:88px 24px;max-width:1100px;margin:0 auto}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.015em;color:var(--ink);margin-bottom:14px}
+.sub{color:var(--muted);max-width:620px;margin-bottom:40px}
+
+/* mabilisang datos */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.fact{background:var(--card);border-radius:var(--radius);padding:24px;border-left:6px solid var(--sun);box-shadow:0 6px 18px rgba(14,27,51,.07)}
+.fact:nth-child(even){border-left-color:var(--red)}
+.fact small{display:block;color:var(--muted);font-size:14px}
+.fact strong{font-family:var(--display);font-size:26px;color:var(--ink);line-height:1.2}
+
+/* ---------- CHAPTER TABS ---------- */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{font:inherit;font-weight:600;cursor:pointer;border:2px solid var(--ink);background:transparent;color:var(--ink);
+  padding:10px 20px;border-radius:999px;transition:background .3s,color .3s,transform .2s}
+.tab:hover{transform:translateY(-2px)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--sun-soft)}
+.panel{display:none;background:var(--card);border-radius:var(--radius);padding:36px;box-shadow:0 10px 30px rgba(14,27,51,.08);position:relative;overflow:hidden}
+.panel.show{display:grid;grid-template-columns:auto 1fr;gap:28px;animation:swap .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes swap{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.year{font-family:var(--display);font-weight:900;font-size:clamp(44px,7vw,84px);line-height:1;color:var(--sun);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+.panel h3{font-family:var(--display);font-size:28px;color:var(--ink);margin-bottom:8px}
+.panel p+p{margin-top:12px}
+
+/* ---------- TIMELINE ---------- */
+.timeline{position:relative;margin-left:14px;padding-left:34px;border-left:3px solid var(--ink)}
+.event{position:relative;margin-bottom:30px;opacity:0;transform:translateX(-24px);transition:opacity .7s,transform .7s}
+.event.in{opacity:1;transform:none}
+.event::before{content:"";position:absolute;left:-46px;top:6px;width:20px;height:20px;border-radius:50%;background:var(--sun);border:4px solid var(--ink)}
+.event.red::before{background:var(--red)}
+.event time{font-family:var(--display);font-weight:700;color:var(--red);font-size:19px}
+.event h4{font-family:var(--display);font-size:22px;color:var(--ink)}
+.event p{color:var(--muted)}
+
+/* ---------- WORKS (flip cards) ---------- */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.flip{perspective:1000px;height:270px;cursor:pointer;background:none;border:0;font:inherit;text-align:left}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.flip:hover .flip-in,.flip:focus-visible .flip-in,.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;justify-content:flex-end}
+.front{background:var(--ink);color:#fff;background-image:radial-gradient(circle at 85% 10%,rgba(226,169,59,.35),transparent 55%)}
+.front h3{font-family:var(--display);font-size:25px;line-height:1.15}
+.front span{color:var(--sun-soft);font-size:15px;margin-top:6px}
+.back{background:var(--sun);color:var(--ink);transform:rotateY(180deg);justify-content:center;font-size:16px}
+.back b{font-family:var(--display);font-size:20px;display:block;margin-bottom:8px}
+
+/* ---------- GALLERY ---------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.shot{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:#DDE5F0;box-shadow:0 6px 18px rgba(14,27,51,.1)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+.shot:hover img{transform:scale(1.08)}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;color:#fff;font-size:14px;background:linear-gradient(transparent,rgba(14,27,51,.88))}
+
+/* ---------- MEDIA ---------- */
+.media{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.mcard{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(14,27,51,.08)}
+.mcard .body{padding:20px 22px 24px}
+.mcard h3{font-family:var(--display);color:var(--ink);font-size:22px}
+.mcard p{color:var(--muted);font-size:15px;margin:4px 0 12px}
+.frame{aspect-ratio:16/9;background:var(--ink)}
+.frame video,.frame iframe,.frame img{width:100%;height:100%;border:0;display:block;object-fit:cover}
+audio{width:100%}
+.poem{padding:26px;background:var(--ink);color:#fff;font-family:var(--display);font-style:italic;font-size:21px;line-height:1.5}
+.poem small{display:block;margin-top:10px;font-style:normal;font-family:var(--body);color:var(--sun-soft);font-size:14px}
+
+/* ---------- LINKS ---------- */
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.links a{display:block;background:var(--card);border-radius:var(--radius);padding:20px 22px;text-decoration:none;border:2px solid transparent;transition:border-color .3s,transform .3s}
+.links a:hover{border-color:var(--sun);transform:translateY(-4px)}
+.links b{font-family:var(--display);color:var(--ink);font-size:19px;display:block}
+.links span{color:var(--muted);font-size:14px}
+
+footer{background:var(--ink);color:#B9C6DD;text-align:center;padding:36px 20px;font-size:15px}
+footer strong{color:var(--sun-soft)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:760px){
+  .hero-inner{grid-template-columns:1fr}
+  .portrait{max-width:280px;margin:0 auto;order:-1}
+  .sun{right:-260px;opacity:.45}
+  .panel.show{grid-template-columns:1fr;padding:26px}
+  section{padding:64px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv,.event{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav" aria-label="Pangunahing menu">
+  <a href="#home" class="active">Simula</a>
+  <a href="#buhay">Buhay</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#akda">Mga Akda</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#media">Media</a>
+  <a href="#sources">Sources</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="home">
+  <!-- Araw na may walong sinag (animated) -->
+  <svg class="sun" viewBox="-100 -100 200 200" aria-hidden="true">
+    <g id="rays" stroke="#E2A93B" stroke-linecap="round"></g>
+    <circle r="30" fill="none" stroke="#E2A93B" stroke-width="2"/>
+    <circle r="22" fill="#E2A93B" opacity=".25"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div>
+      <h1><span>Dr.</span>Jose P. Rizal</h1>
+      <p class="lead">Manggagamot, manunulat, at pambansang bayani ng Pilipinas. Ang buhay niya ang patunay na ang panulat ay kayang gisingin ang isang bayan.</p>
+      <div class="type" id="typed" aria-live="off"></div>
+      <div class="btns">
+        <a class="btn primary" href="#buhay">Basahin ang kuwento</a>
+        <a class="btn ghost" href="#media">Pakinggan at panoorin</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <!-- EDIT DITO: ilagay ang link ng larawan ni Rizal (JPEG/PNG) -->
+      <img id="portraitImg" alt="Larawan ni Jose Rizal" hidden>
+      <div class="ph" id="portraitPh"><b>Larawan ni Rizal</b>Ilagay ang image link sa MEDIA.portrait</div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MABILISANG DATOS ================= -->
+<section aria-labelledby="t-facts">
+  <h2 id="t-facts" class="rv">Sino si Rizal?</h2>
+  <p class="sub rv">Ilang mabilisang datos bago tayo sumisid sa kanyang buhay.</p>
+  <div class="facts rv">
+    <div class="fact"><small>Isinilang</small><strong>Hunyo 19, 1861</strong><small>Calamba, Laguna</small></div>
+    <div class="fact"><small>Mga magulang</small><strong>Francisco at Teodora</strong><small>Mercado at Alonso</small></div>
+    <div class="fact"><small>Pang-ilan sa magkakapatid</small><strong>Ika-7 sa 11</strong><small>anak ng pamilya</small></div>
+    <div class="fact"><small>Namatay</small><strong>Disyembre 30, 1896</strong><small>Bagumbayan, Maynila</small></div>
+  </div>
+</section>
+
+<!-- ================= BUHAY (TABS) ================= -->
+<section id="buhay" aria-labelledby="t-buhay">
+  <h2 id="t-buhay" class="rv">Ang Kanyang Buhay</h2>
+  <p class="sub rv">Pumili ng kabanata para mabasa ang bawat yugto.</p>
+  <div class="tabs rv" role="tablist" aria-label="Mga kabanata ng buhay ni Rizal">
+    <button class="tab" role="tab" aria-selected="true" data-p="p0">Pagkabata</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p1">Pag-aaral</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p2">Europa</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p3">Dapitan</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p4">Huling Araw</button>
+  </div>
+
+  <article class="panel show" id="p0" role="tabpanel">
+    <div class="year">1861</div>
+    <div><h3>Batang Calamba</h3>
+      <p>Isinilang si Jose Protacio Rizal Mercado y Alonso Realonda sa Calamba, Laguna, sa isang pamilyang may pagpapahalaga sa edukasyon. Ang kanyang ina, si Teodora Alonso, ang unang naging guro niya sa pagbasa at pagsulat.</p>
+      <p>Mula pagkabata ay mahilig na siyang gumuhit, magsulat ng tula, at magmasid sa kalikasan.</p></div>
+  </article>
+  <article class="panel" id="p1" role="tabpanel">
+    <div class="year">1872</div>
+    <div><h3>Ateneo at Unibersidad ng Santo Tomas</h3>
+      <p>Nag-aral siya sa Ateneo Municipal de Manila, kung saan nagtapos siya ng Bachiller en Artes. Pagkatapos ay pumasok siya sa Unibersidad ng Santo Tomas para sa medisina at pilosopiya.</p>
+      <p>Dito nabuo ang kanyang hilig sa agham, sining, at panitikan.</p></div>
+  </article>
+  <article class="panel" id="p2" role="tabpanel">
+    <div class="year">1882</div>
+    <div><h3>Paglalakbay sa Europa</h3>
+      <p>Lumisan si Rizal patungong Espanya at nag-aral sa Universidad Central de Madrid. Naglakbay rin siya sa Paris, Heidelberg, at iba pang bayan upang mag-aral ng medisina, lalo na ng oftalmolohiya.</p>
+      <p>Sa Europa isinulat niya ang <em>Noli Me Tangere</em> at <em>El Filibusterismo</em>, at nakilala niya ang mga kapwa Pilipinong repormista.</p></div>
+  </article>
+  <article class="panel" id="p3" role="tabpanel">
+    <div class="year">1892</div>
+    <div><h3>Pagpapatapon sa Dapitan</h3>
+      <p>Itinapon siya sa Dapitan, Zamboanga, ng mga awtoridad na Kastila. Sa halip na manahimik, nagtayo siya ng paaralan, ospital, at sistema ng tubig, at gumamot ng mga pasyente.</p>
+      <p>Ipinakita niya na ang edukasyon at paglilingkod ay maaaring umusbong kahit sa pagkakatapon.</p></div>
+  </article>
+  <article class="panel" id="p4" role="tabpanel">
+    <div class="year">1896</div>
+    <div><h3>Paglilitis at Pagbitay</h3>
+      <p>Inaresto si Rizal at nilitis ng hukumang militar. Binaril siya noong Disyembre 30, 1896 sa Bagumbayan (kilala ngayon bilang Luneta). Bago ito, isinulat niya ang <em>Mi Ultimo Adios</em>, ang kanyang huling tula para sa bayan.</p>
+      <p>Ang kanyang kamatayan ay lalong nagpaalab sa damdaming makabayan ng mga Pilipino.</p></div>
+  </article>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section id="timeline" aria-labelledby="t-time">
+  <h2 id="t-time" class="rv">Timeline</h2>
+  <p class="sub rv">Mga mahahalagang pangyayari sa buhay ni Rizal, ayon sa pagkakasunod-sunod.</p>
+  <div class="timeline">
+    <div class="event"><time>1861</time><h4>Isinilang sa Calamba</h4><p>Ika-19 ng Hunyo, sa Calamba, Laguna.</p></div>
+    <div class="event"><time>1887</time><h4>Nailathala ang Noli Me Tangere</h4><p>Inilimbag sa Berlin, Alemanya.</p></div>
+    <div class="event red"><time>1890</time><h4>Annotated edition ng Sucesos de las Islas Filipinas</h4><p>Inanotahan niya ang aklat ni Antonio de Morga sa Paris upang ipakita ang kaunlaran ng Pilipinas bago dumating ang mga Kastila.</p></div>
+    <div class="event"><time>1891</time><h4>Nailathala ang El Filibusterismo</h4><p>Inilimbag sa Ghent, Belgium.</p></div>
+    <div class="event red"><time>1892</time><h4>Itinatag ang La Liga Filipina</h4><p>Samahang naglalayong pagkaisahin ang mga Pilipino sa mapayapang paraan.</p></div>
+    <div class="event"><time>1892–1896</time><h4>Pagpapatapon sa Dapitan</h4><p>Nagturo, gumamot, at nagtayo ng mga proyektong pangkomunidad.</p></div>
+    <div class="event red"><time>1896</time><h4>Binaril sa Bagumbayan</h4><p>Ika-30 ng Disyembre.</p></div>
+  </div>
+</section>
+
+<!-- ================= AKDA (FLIP CARDS) ================= -->
+<section id="akda" aria-labelledby="t-akda">
+  <h2 id="t-akda" class="rv">Mga Akda</h2>
+  <p class="sub rv">I-hover o i-tap ang card para malaman ang kuwento sa likod ng bawat akda.</p>
+  <div class="works rv">
+    <button class="flip"><div class="flip-in">
+      <div class="face front"><h3>Noli Me Tangere</h3><span>Nobela, 1887</span></div>
+      <div class="face back"><div><b>Unang nobela</b>Inilalantad ang pang-aabuso ng mga namumuno at ang kalagayan ng lipunang Pilipino sa pamamagitan ng kuwento nina Crisostomo Ibarra at Maria Clara.</div></div>
+    </div></button>
+    <button class="flip"><div class="flip-in">
+      <div class="face front"><h3>El Filibusterismo</h3><span>Nobela, 1891</span></div>
+      <div class="face back"><div><b>Ikalawang nobela</b>Karugtong ng Noli. Mas madilim ang tono at tumatalakay sa paghihiganti at sa bunga ng kawalan ng katarungan.</div></div>
+    </div></button>
+    <button class="flip"><div class="flip-in">
+      <div class="face front"><h3>Mi Ultimo Adios</h3><span>Tula, 1896</span></div>
+      <div class="face back"><div><b>Huling pamamaalam</b>Isinulat sa bilangguan bago ang kanyang pagbitay. Pag-ibig sa bayan ang sentro ng tula.</div></div>
+    </div></button>
+    <button class="flip"><div class="flip-in">
+      <div class="face front"><h3>Sucesos de las Islas Filipinas (annotated)</h3><span>Anotasyon, 1890</span></div>
+      <div class="face back"><div><b>Pagbabalik-tanaw</b>Gamit ang mga anotasyon, ipinakita ni Rizal na may maunlad nang kabihasnan ang mga Pilipino bago ang pananakop.</div></div>
+    </div></button>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" aria-labelledby="t-gal">
+  <h2 id="t-gal" class="rv">Gallery</h2>
+  <p class="sub rv">Mga larawan (JPEG/PNG) at isang animated GIF.</p>
+  <div class="gallery rv" id="galleryBox"></div>
+</section>
+
+<!-- ================= MEDIA ================= -->
+<section id="media" aria-labelledby="t-med">
+  <h2 id="t-med" class="rv">Pakinggan at Panoorin</h2>
+  <p class="sub rv">Audio (MP3), video (MP4 o YouTube), at GIF.</p>
+  <div class="media rv">
+    <div class="mcard">
+      <div class="poem">Paalam, Lupang Hinirang, Perlas ng Dagat Silangan…<small>Mula sa Mi Ultimo Adios (salin sa Filipino)</small></div>
+      <div class="body"><h3>Audio: Mi Ultimo Adios</h3><p>Pakinggan ang pagbasa ng huling tula.</p>
+        <div id="audioBox"></div></div>
+    </div>
+    <div class="mcard">
+      <div class="frame" id="videoBox"></div>
+      <div class="body"><h3>Video: Buhay ni Rizal</h3><p>Panoorin ang maikling dokumentaryo.</p></div>
+    </div>
+    <div class="mcard">
+      <div class="frame" id="gifBox"></div>
+      <div class="body"><h3>Animated GIF</h3><p>Maikling animation na may kaugnayan sa paksa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOURCES (HYPERLINKS) ================= -->
+<section id="sources" aria-labelledby="t-src">
+  <h2 id="t-src" class="rv">Sources at Karagdagang Babasahin</h2>
+  <p class="sub rv">Mag-click para magbukas ng bagong tab.</p>
+  <div class="links rv">
+    <a href="https://en.wikipedia.org/wiki/Jos%C3%A9_Rizal" target="_blank" rel="noopener"><b>Jose Rizal sa Wikipedia</b><span>Pangkalahatang talambuhay</span></a>
+    <a href="https://www.britannica.com/biography/Jose-Rizal" target="_blank" rel="noopener"><b>Encyclopaedia Britannica</b><span>Maikling biography</span></a>
+    <a href="https://nhcp.gov.ph/" target="_blank" rel="noopener"><b>National Historical Commission of the Philippines</b><span>Opisyal na tala ng kasaysayan</span></a>
+    <a href="https://www.gutenberg.org/ebooks/search/?query=rizal" target="_blank" rel="noopener"><b>Project Gutenberg</b><span>Mga akda ni Rizal na mababasa nang libre</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>Prepared by <strong>Edwin</strong> · City College of San Jose del Monte · School of Education</p>
+</footer>
+
+<script>
+/* =====================================================
+   EDIT DITO: ilagay ang sarili mong media links.
+   Iwanang "" kung wala pa, may placeholder na lalabas.
+   - Larawan: JPEG/PNG/GIF direct link (hal. galing sa Wikimedia Commons o sa sarili mong hosting)
+   - audio: direktang .mp3 link
+   - video: direktang .mp4 link, O gamitin ang youtubeId (mas madali, hal. "dQw4w9WgXcQ")
+   ===================================================== */
+const MEDIA = {
+  portrait: "",
+  gallery: [
+    { src: "", caption: "Calamba, Laguna: bayang sinilangan" },
+    { src: "", caption: "Ateneo Municipal de Manila" },
+    { src: "", caption: "Noli Me Tangere (1887)" },
+    { src: "", caption: "Dapitan: paaralan at ospital" },
+    { src: "", caption: "Bagumbayan (Luneta) ngayon" },
+    { src: "", caption: "Rizal Monument" }
+  ],
+  gif: "",
+  audio: "",
+  video: "",
+  youtubeId: ""
+};
+
+/* ---------- helper ---------- */
+const ph = (t, hint) => `<div class="ph"><b>${t}</b>${hint}</div>`;
+
+/* ---------- araw: walong sinag ---------- */
+(function rays(){
+  const g = document.getElementById('rays');
+  let s = '';
+  for(let i=0;i<8;i++){
+    const a = i*45;
+    s += `<g transform="rotate(${a})"><line x1="0" y1="-40" x2="0" y2="-95" stroke-width="3"/>`+
+         `<line x1="-5" y1="-42" x2="-9" y2="-80" stroke-width="1.2" opacity=".6"/>`+
+         `<line x1="5" y1="-42" x2="9" y2="-80" stroke-width="1.2" opacity=".6"/></g>`;
+  }
+  g.innerHTML = s;
+})();
+
+/* ---------- portrait ---------- */
+if(MEDIA.portrait){
+  const img = document.getElementById('portraitImg');
+  img.src = MEDIA.portrait; img.hidden = false;
+  document.getElementById('portraitPh').remove();
+}
+
+/* ---------- gallery ---------- */
+document.getElementById('galleryBox').innerHTML = MEDIA.gallery.map(g =>
+  `<figure class="shot">${g.src ? `<img src="${g.src}" alt="${g.caption}" loading="lazy">` : ph('Larawan','Ilagay ang image link sa MEDIA.gallery')}<figcaption>${g.caption}</figcaption></figure>`
+).join('');
+
+/* ---------- media ---------- */
+document.getElementById('gifBox').innerHTML = MEDIA.gif
+  ? `<img src="${MEDIA.gif}" alt="Animated GIF">`
+  : ph('GIF','Ilagay ang link sa MEDIA.gif');
+document.getElementById('audioBox').innerHTML = MEDIA.audio
+  ? `<audio controls preload="none" src="${MEDIA.audio}">Hindi suportado ng browser ang audio.</audio>`
+  : `<div class="ph" style="min-height:70px;border-radius:12px">Ilagay ang .mp3 link sa MEDIA.audio</div>`;
+document.getElementById('videoBox').innerHTML = MEDIA.youtubeId
+  ? `<iframe src="https://www.youtube.com/embed/${MEDIA.youtubeId}" title="Video tungkol kay Rizal" allowfullscreen loading="lazy"></iframe>`
+  : MEDIA.video
+    ? `<video controls preload="metadata" src="${MEDIA.video}"></video>`
+    : ph('Video','Ilagay ang .mp4 link o YouTube ID');
+
+/* ---------- tabs ---------- */
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected','false'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));
+    btn.setAttribute('aria-selected','true');
+    document.getElementById(btn.dataset.p).classList.add('show');
+  });
+});
+
+/* ---------- flip cards (touch) ---------- */
+document.querySelectorAll('.flip').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('on')));
+
+/* ---------- typing animation ---------- */
+(function typing(){
+  const lines = ["“Ang hindi marunong lumingon sa pinanggalingan ay hindi makararating sa paroroonan.”","Manunulat. Manggagamot. Bayani."];
+  const el = document.getElementById('typed');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = lines[1]; return; }
+  let li = 0, ci = 0, del = false;
+  (function tick(){
+    const t = lines[li];
+    el.textContent = t.slice(0,ci);
+    if(!del && ci === t.length){ del = true; return setTimeout(tick,2400); }
+    if(del && ci === 0){ del = false; li = (li+1)%lines.length; }
+    ci += del ? -1 : 1;
+    setTimeout(tick, del ? 18 : 42);
+  })();
+})();
+
+/* ---------- reveal on scroll + active nav ---------- */
+const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.15});
+document.querySelectorAll('.rv,.event').forEach(el=>io.observe(el));
+
+const links = [...document.querySelectorAll('#nav a')];
+const secs = links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){ links.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+e.target.id)); }
+}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+</script>
+</body>
+</html>
